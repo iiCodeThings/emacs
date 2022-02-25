@@ -1,0 +1,12 @@
+#+AUTHOR: iiiCodeR
+#+DATA: 2022-02-14
+#+DESCRIPTION: Init .emacs.d guide
+#+EMAIL: ytu_cyc@126.com
+
+* Languages
+** python
+**** Install Microsoft language server
+** go
+*** Install gopls
+go get golang.org/x/tools/gopls@latest
+** c-c++

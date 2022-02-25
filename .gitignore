@@ -1,0 +1,13 @@
+eshell/
+.cache/
+.lsp-session-v1
+auto-save-list/
+recentf
+elpa/archives/gnu/archive-contents.signed
+elpa/archives/nongnu/archive-contents.signed
+elpa/gnupg/
+*.elc
+projects
+transient/
+/image-dired/
+mspyls/
