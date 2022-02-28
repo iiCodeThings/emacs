@@ -88,6 +88,8 @@
 
 ;; for c/c++
 (add-hook 'c-mode-hook #'lsp)
+(setq-default c-basic-offset 4)
+(add-hook 'c-mode-common-hook #'(lambda () (c-toggle-auto-newline 1)))
 
 ;; for python auto complete
 (require 'lsp-python-ms)
