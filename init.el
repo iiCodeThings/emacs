@@ -76,8 +76,6 @@
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
-;; F8 open neotree
-(global-set-key [f8] 'treemacs-select-window)
 
 ;; For golang auto complete
 (add-hook 'go-mode-hook #'lsp)
@@ -96,6 +94,12 @@
 (add-hook 'python-mode-hook #'lsp)
 (setq lsp-python-ms-executable
       "~/.emacs.d/mspyls/Microsoft.Python.LanguageServer")
+
+;; F key mapping
+(global-set-key (kdb "<f7>") 'treemacs-select-window)
+(global-set-key (kbd "<f8>") 'project-find-file)
+(global-set-key (kbd "<f9>") 'project-find-regexp)
+
 
 ;; enhance emacs
 ;; https://oremacs.com/swiper/#introduction
