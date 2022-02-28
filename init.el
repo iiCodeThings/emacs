@@ -96,7 +96,7 @@
       "~/.emacs.d/mspyls/Microsoft.Python.LanguageServer")
 
 ;; F key mapping
-(global-set-key (kdb "<f7>") 'treemacs-select-window)
+(global-set-key (kbd "<f7>") 'treemacs-select-window)
 (global-set-key (kbd "<f8>") 'project-find-file)
 (global-set-key (kbd "<f9>") 'project-find-regexp)
 
