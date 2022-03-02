@@ -80,6 +80,11 @@
 ;; For golang auto complete
 (add-hook 'go-mode-hook #'lsp)
 
+;; For html/css/js auto complete
+(add-hook 'html-mode-hook #'lsp)
+(add-hook 'css-mode-hook #'lsp)
+(add-hook 'js-mode-hook #'lsp)
+
 ;; For python virtualenv
 (require 'auto-virtualenv)
 (add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv)
