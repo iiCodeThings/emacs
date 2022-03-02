@@ -76,9 +76,18 @@
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
+;; enter read only mode after open file
+(add-hook 'find-file-hook #'read-only-mode)
 
 ;; For golang auto complete
 (add-hook 'go-mode-hook #'lsp)
+
+;; Set up before-save hooks to format buffer and add/delete imports.
+;; Make sure you don't have other gofmt/goimports hooks enabled.
+(defun lsp-go-install-save-hooks ()
+  (add-hook 'before-save-hook #'lsp-format-buffer t t)
+  (add-hook 'before-save-hook #'lsp-organize-imports t t))
+(add-hook 'go-mode-hook #'lsp-go-install-save-hooks)
 
 ;; For html/css/js auto complete
 (add-hook 'html-mode-hook #'lsp)
