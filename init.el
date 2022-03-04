@@ -37,7 +37,7 @@
 (define-key rust-mode-map (kbd "C-c C-c") 'rust-run)
 
 ;; turn on company
-(global-company-mode t)
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;; trun on delete section
 (delete-selection-mode t)
@@ -77,10 +77,15 @@
   (exec-path-from-shell-initialize))
 
 ;; enter read only mode after open file
-(add-hook 'find-file-hook #'read-only-mode)
+;;(add-hook 'find-file-hook #'read-only-mode)
 
 ;; For golang auto complete
 (add-hook 'go-mode-hook #'lsp)
+
+(require 'yasnippet)
+(setq yas-snippet-dirs
+      '("~/.emacs.d/elpa/yasnippet-snippets-20220221.1234/snippets"))
+(yas-global-mode 1)
 
 ;; Set up before-save hooks to format buffer and add/delete imports.
 ;; Make sure you don't have other gofmt/goimports hooks enabled.
@@ -155,7 +160,7 @@
  '(lsp-python-ms-cache "System")
  '(lsp-python-ms-dir "~/.emacs.d/mspyls")
  '(package-selected-packages
-   '(magit sdcv cargo-mode rust-mode yasnippet exec-path-from-shell go-mode treemacs lsp-python-ms lsp-mode auto-virtualenv popwin smartparens counsel swiper hungry-delete monokai-theme company))
+   '(yasnippet-snippets magit sdcv cargo-mode rust-mode yasnippet exec-path-from-shell go-mode treemacs lsp-python-ms lsp-mode auto-virtualenv popwin smartparens counsel swiper hungry-delete monokai-theme company))
  '(python-indent-guess-indent-offset nil)
  '(show-paren-mode t)
  '(tool-bar-mode nil))
